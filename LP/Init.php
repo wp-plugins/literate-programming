@@ -1,5 +1,7 @@
 <?php
 
+if (!class_exists('LP_Init')) {
+
 require LP_API . '/Error.php';
 require LP_API . '/Fragment.php';
 
@@ -124,10 +126,8 @@ function LP_Assert($bool, $message) {
 }
 
 function LP_GetLines($string) {
-    //return explode( 13, $string);
-    return preg_split("/((\r?\n)|(\r\n?))/", $string);
-    //return explode(PHP_EOL, $string);
-    //return explode('<br />',nl2br($string));
-    //return explode(array("\r\n", "\n", "\r"), $string); 
+    return preg_split("/((\r?\n)|(\r\n?))/", $string); 
+}
+
 }
 ?>
