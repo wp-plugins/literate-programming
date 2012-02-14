@@ -30,7 +30,7 @@ Source code can be gradually implemented and explained, without the need to repe
 
 This is the first published version. Any ideas for new features and improvements are greatly welcomed! 
 
-Some introductions, tutorials, posts about this plugin and literate programming in general 
+Some [introductions, tutorials, posts about this plugin](http://weblog.benjaminsommer.com/projects/literate-programming/ "Tutorials, Introductions, Posts") and literate programming in general 
 can be found on my personal weblog.
 
 
@@ -42,11 +42,11 @@ Use WordPress integrated installation. No additional dependencies required.
 
 = How to define a fragment? =
 
-Use WP shortcodes for that: `[fragment name="unique fragment name" def/]`. In normal cases, this should be placed within a parent fragment: 
+Use WP shortcodes for that: `[fragment name="unique fragment name" /]`. In normal cases, this should be placed within a parent fragment: 
 
-`[fragment name="parent fragment"] 
+`[fragment name="implemented parent fragment name"] 
 ... 
-[fragment name="sub fragment" def/] 
+[fragment name="define new fragment" /] 
 ...
 [/fragment]`
 
@@ -54,7 +54,7 @@ Use WP shortcodes for that: `[fragment name="unique fragment name" def/]`. In no
 
 Just the the shortcode 
 
-`[fragment name="unique fragment name"]
+`[fragment name="define new fragment"]
 //add implementation here
 [/fragment]` 
 
@@ -72,10 +72,6 @@ The first and thus root fragment cannot have a definition, thus define it as roo
 = Do I really need fragment_def? =
 
 Well, yes and no. Officially, nested shortcodes having the same name is not recommended/supported according to WordPress.org. But you use `fragment` instead of `fragment_def` - it worked on my system.
-
-== Screenshots ==
-
-No screenshots available - maybe when I provides a UI.
 
 == Upgrade Notice ==
 
