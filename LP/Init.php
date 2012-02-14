@@ -11,7 +11,7 @@ if (!class_exists('LP_Init')) {
      * @category    LP
      * @package     LP
      * @subpackage  LP_Init
-     * @version     Release: 1.0
+     * @version     Release: 1.1
      * @since       Class available since Release 1.0
      * @author      Benjamin Sommer <developer@benjaminsommer.com>
      */
@@ -21,7 +21,7 @@ if (!class_exists('LP_Init')) {
          * Initialize Netblog and its activated modules
          */
         public static function exec() {
-            // TODO
+            self::initAdminPanel();
         }
 
         /**
@@ -29,10 +29,10 @@ if (!class_exists('LP_Init')) {
          */
         public static function initAdminPanel() {
             $version = get_option('LP_VERSION');
-            if ($version === false) {
-                self::on_install();
-            } else if ($version != self::getVersion())
-                self::on_update();
+            if ($version === false)
+                self::install();
+            else if ($version != self::getVersion())
+                self::update();
         }
 
         /**
