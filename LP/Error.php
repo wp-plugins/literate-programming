@@ -18,8 +18,9 @@
  * @since       Class available since Release 1.0
  * @author      Benjamin Sommer <developer@benjaminsommer.com>
  */
+
 class LP_Error {
-    
+
     /**
      * Set the current error state and overwrite the last error
      *
@@ -29,10 +30,9 @@ class LP_Error {
     public static function push($message, $errno=400) {
         $t['errno'] = $errno;
         $t['message'] = $message;
-        self::$errs[] = (object)$t;
+        self::$errs[] = (object) $t;
     }
-    
-        
+
     /**
      * Get the detailed error message with error number
      *
@@ -41,7 +41,7 @@ class LP_Error {
     public static function getLastError() {
         return end(self::$errs);
     }
-    
+
     /**
      * Get the detailed error message with error number
      *
@@ -50,7 +50,7 @@ class LP_Error {
     public static function popLastError() {
         return array_pop(self::$errs);
     }
-    
+
     /**
      * If the error stack is not empty, so if it contains at least one error
      *
@@ -59,20 +59,21 @@ class LP_Error {
     public static function hasError() {
         return sizeof(self::$errs) > 0;
     }
-    
+
     public static function printStack($ln=PHP_EOL) {
-        foreach(self::$errs as $o)
-            echo "Error {$o->errno}: {$o->message}.".$ln;
+        foreach (self::$errs as $o)
+            echo "Error {$o->errno}: {$o->message}." . $ln;
     }
-    
+
     /**
      * Clear the current error state
      */
     public static function clear() {
         self::$errs = array();
     }
-    
+
     private static $errs = array();
+
 }
 
 ?>

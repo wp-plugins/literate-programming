@@ -62,7 +62,7 @@ class LP_DataTransfer {
             $this->response = @file_get_contents($url);
             return true;
         }
-        LP_Error::push('Failed to retrieve url due to limited system configuration',404);
+        LP_Error::push('Failed to retrieve url due to limited system configuration', 404);
         return false;
     }
 
@@ -75,7 +75,7 @@ class LP_DataTransfer {
     public function submit($fields) {
         if (is_array($fields))
             $fields = http_build_query($fields);
-        
+
         if (function_exists('curl_init')) {
             $ch = curl_init();
             $options = array(
@@ -100,7 +100,7 @@ class LP_DataTransfer {
             if (!empty($errno))
                 LP_Error::push($error, $errno);
             curl_close($ch);
-            $this->response = $data;    
+            $this->response = $data;
             return $errno == 0;
         } else if (ini_get('allow_url_fopen') == '1') {
             $context = stream_context_create(

@@ -4,7 +4,7 @@ Donate link: http://benjaminsommer.com/donate.php
 Tags: literate programming, fragments, source code publishing
 Requires at least: 2.8
 Tested up to: 3.3.1
-Stable tag: 1.0
+Stable tag: 1.1
 
 Gradually introduce and explain source code fragments to state your thoughts clearly and explicitly.
 
@@ -42,7 +42,13 @@ Use WordPress integrated installation. No additional dependencies required.
 
 = How to define a fragment? =
 
-Use WP shortcodes for that: `[fragment_def name="unique fragment name" /]`. In normal cases, this should be placed within a parent fragment: `[fragment name="parent fragment"] ... [fragment_def name="sub fragment" /] ... [/fragment]`. 
+Use WP shortcodes for that: `[fragment name="unique fragment name" def/]`. In normal cases, this should be placed within a parent fragment: 
+
+`[fragment name="parent fragment"] 
+... 
+[fragment name="sub fragment" def/] 
+...
+[/fragment]`
 
 = How do I add implementations to fragments? =
 
@@ -54,6 +60,10 @@ Just the the shortcode
 
 You can add implementations step by step by repeatedly using this fragment with the same name. The plugin
 does the rest.
+
+= Can I reference fragment names just within my text? =
+
+Yes. Just type `[fragment name="your_fragment_name" ref/]` into your WordPress editor.
 
 = I got the error message: no fragment definition <...> found! =
 
@@ -72,6 +82,11 @@ No screenshots available - maybe when I provides a UI.
 No upgrade notices available - it should work just fine.
 
 == Changelog ==
+
+= 1.1 =
+* Updated LP_Fragment: `[fragment name="" ref /]` may be used as a shortcut for `[fragment_ref name="" /]`
+* Changed enclosing fragment characters from smaller/greater to bra/ket characters.
+* Changed equal character to identical character when implementing fragments to increase readability.
 
 = 1.0 =
 * Added class LP_Fragment
