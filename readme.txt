@@ -1,12 +1,12 @@
 === Plugin Name ===
 Contributors: BenjaminSommer
 Donate link: http://benjaminsommer.com/donate.php
-Tags: literate programming, fragments, source code publishing, prototypes, snippets, source code, algorithm
+Tags: literate programming, fragments, source code publishing, prototypes, snippets, source code, algorithm, pseudocode
 Requires at least: 2.8
 Tested up to: 3.3.1
 Stable tag: 1.2
 
-Introduce and explain source code, prototypes, fragments, snippets. Easily demonstrate, presentate and explain algorithms and their ideas.
+Introduce and explain source code, prototypes, pseudocodes, fragments, snippets. Easily demonstrate, presentate and explain algorithms and their ideas.
 
 == Description ==
 
