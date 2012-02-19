@@ -5,7 +5,7 @@
   Plugin URI: http://weblog.benjaminsommer.com/literate-programming/
   Description: Use literate programming when publishing source code to greatly increase code understanding. It should be used whenever gradually introducing and explaining source code fragments. Styling and reference checking is automatically done.
   Author: Benjamin Sommer
-  Version: 1.1
+  Version: 1.2
   Author URI: http://benjaminsommer.com
   License: CC GNU GPL 2.0 license
   Text Domain: lppress

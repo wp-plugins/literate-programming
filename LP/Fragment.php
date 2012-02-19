@@ -6,7 +6,7 @@
  * @category    LP
  * @package     LP
  * @subpackage  LP_Fragment
- * @version     Release: 1.1
+ * @version     Release: 1.2
  * @since       Class available since Release 1.0
  * @author      Benjamin Sommer <developer@benjaminsommer.com>
  */
@@ -66,4 +66,5 @@ class LP_Fragment {
 add_shortcode('fragment', 'LP_Fragment::doShortcode');
 add_shortcode('fragment_def', 'LP_Fragment::definitionShortcode');
 add_shortcode('fragment_ref', 'LP_Fragment::referenceShortcode');
+add_filter('comment_text', 'do_shortcode');
 ?>

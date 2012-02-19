@@ -1,12 +1,12 @@
 === Plugin Name ===
 Contributors: BenjaminSommer
 Donate link: http://benjaminsommer.com/donate.php
-Tags: literate programming, fragments, source code publishing
+Tags: literate programming, fragments, source code publishing, prototypes, snippets, source code, algorithm
 Requires at least: 2.8
 Tested up to: 3.3.1
-Stable tag: 1.1
+Stable tag: 1.2
 
-Gradually introduce and explain source code fragments to state your thoughts clearly and explicitly.
+Introduce and explain source code, prototypes, fragments, snippets. Easily demonstrate, presentate and explain algorithms and their ideas.
 
 == Description ==
 
@@ -21,17 +21,19 @@ its associated comments.
 
 Source code can be gradually implemented and explained, without the need to repeatedly refer to one complete source code.
 
-**Other advantages**:
+**Features**:
 
+* Automatically format nested fragments, so you can concentrate on key algorithms and their presentations (or explanations)
 * Very lightweight plugin
 * Internationalization supported
 * Strict Compliance to Zend Frameworks Coding Standard suggestions/guidelines
 
+**Future Work**:
 
-This is the first published version. Any ideas for new features and improvements are greatly welcomed! 
+* Interactive source code editor to create fragments from standard source code. Simply paste in source code and mark sections to create fragments with unique names. Use these names when writing WordPress posts, pages, comments.
+* Automatically create complete source code listings from previously defined fragments at the end of posts or pages. 
 
-Some [introductions, tutorials, posts about this plugin](http://weblog.benjaminsommer.com/projects/literate-programming/ "Tutorials, Introductions, Posts") and literate programming in general 
-can be found on my personal weblog.
+[Introductions, tutorials, posts about this plugin](http://weblog.benjaminsommer.com/projects/literate-programming/ "Tutorials, Introductions, Posts") and literate programming in general can be found on my personal weblog.
 
 
 == Installation ==
@@ -78,6 +80,10 @@ Well, yes and no. Officially, nested shortcodes having the same name is not reco
 No upgrade notices available - it should work just fine.
 
 == Changelog ==
+
+= 1.2 =
+* Added support for comments: Fragments can now be defined and referenced in comments so that the user or editor of comments can better refer to post contents.
+* Updated readme.txt
 
 = 1.1 =
 * Updated LP_Fragment: `[fragment name="" ref /]` may be used as a shortcut for `[fragment_ref name="" /]`
