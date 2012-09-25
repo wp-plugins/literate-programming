@@ -14,12 +14,12 @@ class LP_Fragment {
 
     public static function doShortcode($atts, $content) {
         if (empty($content)) {
-            if (in_array('ref', $atts))
+            //if (in_array('ref', $atts))
                 return self::referenceShortcode($atts, $content);
-            return self::definitionShortcode($atts, $content);
+            //return self::definitionShortcode($atts, $content);
         }
         $id = get_the_ID();
-        LP_Assert(!isset(self::$fragments[$id][$atts['name']]) && !in_array('root', $atts), "Missing Fragment Definition &#9001;{$atts['name']}&#9002;. ");
+        //LP_Assert(!isset(self::$fragments[$id][$atts['name']]) && !in_array('root', $atts), "Missing Fragment Definition &#9001;{$atts['name']}&#9002;. ");
         $fragment = &self::$fragments[$id][$atts['name']];
         $content = do_shortcode($content);
         $operator = isset($fragment['content']) ? '+&equiv;' : '&equiv;';
@@ -46,17 +46,17 @@ class LP_Fragment {
     }
 
     public static function definitionShortcode($atts, $content) {
-        $id = get_the_ID();
-        LP_Assert(!isset($atts['name']) || empty($atts['name']), "Missing Fragment Name in new definition.");
-        LP_Assert(isset(self::$fragments[$id][$atts['name']]), "Fragment &#9001;{$atts['name']}&#9002; already defined.");
+        //$id = get_the_ID();
+        //LP_Assert(!isset($atts['name']) || empty($atts['name']), "Missing Fragment Name in new definition.");
+        //LP_Assert(isset(self::$fragments[$id][$atts['name']]), "Fragment &#9001;{$atts['name']}&#9002; already defined.");
         self::$fragments[$id][$atts['name']] = array();
         return "<span style=\"color:blue\">&#9001;<em>{$atts['name']}</em>&#9002;</span>";
     }
 
     public static function referenceShortcode($atts, $content) {
-        $id = get_the_ID();
-        LP_Assert(!isset(self::$fragments[$id][$atts['name']]), "Missing Fragment Definition &#9001;{$atts['name']}&#9002;. ");
-        return "<code>&#0139;{$atts['name']}&#9002;</code>";
+        //$id = get_the_ID();
+        //LP_Assert(!isset(self::$fragments[$id][$atts['name']]), "Missing Fragment Definition &#9001;{$atts['name']}&#9002;. ");
+        return "<span style=\"color:blue\"><code>&#9001;{$atts['name']}&#9002;</code></span>";
     }
 
     private static $fragments = array();

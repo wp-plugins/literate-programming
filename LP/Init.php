@@ -4,6 +4,7 @@ if (!class_exists('LP_Init')) {
 
     require LP_API . '/Error.php';
     require LP_API . '/Fragment.php';
+    require LP_API . '/Wizard.php';
 
     /**
      * Initialize LPPress (literate programming for wordpress)
@@ -21,13 +22,14 @@ if (!class_exists('LP_Init')) {
          * Initialize Netblog and its activated modules
          */
         public static function exec() {
-            self::initAdminPanel();
+            add_action('admin_init', 'LP_Init::initAdminPanel');
         }
 
         /**
          * Register UI elements and js scripts for the admin panel
          */
         public static function initAdminPanel() {
+        	LP_Wizard::init();
             $version = get_option('LP_VERSION');
             if ($version === false)
                 self::install();

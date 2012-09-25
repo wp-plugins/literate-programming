@@ -3,8 +3,8 @@ Contributors: BenjaminSommer
 Donate link: http://benjaminsommer.com/donate.php
 Tags: literate programming, fragments, source code publishing, prototypes, snippets, source code, algorithm, pseudocode
 Requires at least: 2.8
-Tested up to: 3.3.1
-Stable tag: 1.2
+Tested up to: 3.5
+Stable tag: 1.3
 
 Introduce and explain source code, prototypes, pseudocodes, fragments, snippets. Easily demonstrate, presentate and explain algorithms and their ideas.
 
@@ -65,11 +65,8 @@ does the rest.
 
 = Can I reference fragment names just within my text? =
 
-Yes. Just type `[fragment name="your_fragment_name" ref/]` into your WordPress editor.
+Yes. Just type `[fragment name="your_fragment_name"/]` into your WordPress editor.
 
-= I got the error message: no fragment definition <...> found! =
-
-The first and thus root fragment cannot have a definition, thus define it as root and the message will disappear: `[fragment name="unique fragment name" root]`.
 
 = Do I really need fragment_def? =
 
@@ -80,6 +77,12 @@ Well, yes and no. Officially, nested shortcodes having the same name is not reco
 No upgrade notices available - it should work just fine.
 
 == Changelog ==
+
+= 1.3 =
+* Added Wizard
+* Improved Shortcode handling
+* No warnings are displayed (silent working)
+* Compatibility to WordPress 3.5
 
 = 1.2 =
 * Added support for comments: Fragments can now be defined and referenced in comments so that the user or editor of comments can better refer to post contents.
